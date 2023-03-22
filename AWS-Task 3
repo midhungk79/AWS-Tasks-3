@@ -148,6 +148,9 @@ https://prnt.sc/gDKC8zl4hPco
 https://prnt.sc/NDu6GwyD-TVa
 
 
+
+TASKS - S3
+
 1. Create an s3 bucket and  enable versioning to the s3 bucket. Then try to upload a test file and check if version id is created. Make some changes in test file and try to upload it again and check if new version id is created. 
 
 Created and s3 bucket and enabled public access to it and enabled versioning.  
