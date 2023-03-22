@@ -205,9 +205,13 @@ The result is.
 https://prnt.sc/GVdzzw1uyyhp
 
 
+3. Create a lifecycle policy to move objects in s3 between different storage classes.
 
 
+Created lifecycle policy as below for aforementioned s3 bucket 
 
 
+https://prnt.sc/BsWrayxAhZOG
 
+https://prnt.sc/o5RJanDNP5UL
 
