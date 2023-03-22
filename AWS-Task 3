@@ -147,5 +147,18 @@ https://prnt.sc/9-phw0DUBdBZ
 https://prnt.sc/gDKC8zl4hPco
 https://prnt.sc/NDu6GwyD-TVa
 
-   
+
+1. Create an s3 bucket and  enable versioning to the s3 bucket. Then try to upload a test file and check if version id is created. Make some changes in test file and try to upload it again and check if new version id is created. 
+
+Created and s3 bucket and enabled public access to it and enabled versioning.  
+
+uploaded  a txt file to  the s3 bucket and then upaloded the same file to the s3 bucket after making some changes in the content on that txt file. 
+
+The result is.  its started to showing version.
+
+https://prnt.sc/KPdjrJg8CAdD
+
+
+
+
 
