@@ -173,3 +173,41 @@ Now the S3 link accesible.
 https://prnt.sc/65-2eEvah5Tr
 
 
+2. Deploy an S3 bucket as static website. 
+
+
+Downlaoded a static website template from github.  
+
+Just uplaoded it into the newly created s3 bucket.  
+
+Just went to properties of that s3 bucket and made it as static website hosting 
+
+
+https://prnt.sc/JPM7MaPKpjLI
+
+https://prnt.sc/wg0-xAhMya2s
+
+
+Before making all this changes enabled permsiion to public and and amde all files as public. 
+
+
+https://prnt.sc/DOJgp9LhZGVf
+
+
+Then went to index.html and accessed the url.  
+
+
+https://prnt.sc/p-n71qYnC1ht
+
+
+The result is.  
+
+https://prnt.sc/GVdzzw1uyyhp
+
+
+
+
+
+
+
+
