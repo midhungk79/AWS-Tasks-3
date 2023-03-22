@@ -1,0 +1,151 @@
+TASKS - RDS
+=========
+1. Create an EC2 instance and setup Wordpress in it.Create an RDS instance and use this RDS instance as database for the Wordpress.
+
+Created a RDS with the details as below.  
+
+https://prnt.sc/mxbFfBdDQSIl
+
+given DB name as wordpress while creating it.
+
+Then created a ec2 instance with amazon-linux-2 ami. 
+
+Then installed lamp.  
+
+root@ip-172-31-25-239 wordpress]# history
+    1  yum install httpd -y
+    2  yum install php-mysql -y
+    3  amazon-linux-extras install php7.3
+    6  systemctl enable httpd --now
+    
+    
+    Then downlaoded lates versions as below   
+    
+    7  cd /var/www/html/
+    8  wget https://wordpress.org/latest.zip
+    10  ls
+   11  unzip latest.zip 
+   12  cd wordpress/
+   
+   Then while running url as below. 
+   http://34.220.179.83/wordpress/
+   
+   it will go to the installation as below.  
+   
+   then we  put DB details and username and paassword and DBhost as RDS hostname (wprds.cnbdq9c3uik5.us-west-2.rds.amazonaws.com) . it will show the wp-config.php details. 
+   
+   Please go to the wordpress folder and copy that wp-config.php details in our wp-config.php file  
+   
+    12  cd wordpress/
+   13  cp -pr wp-config-sample.php wp-config-sample.php.bkp
+   14  mv wp-config-sample.php wp-config.php
+   16  > wp-config.php 
+   17  vi wp-config.php 
+
+
+<?php
+/**
+ * The base configuration for WordPress
+ *
+ * The wp-config.php creation script uses this file during the installation.
+ * You don't have to use the web site, you can copy this file to "wp-config.php"
+ * and fill in the values.
+ *
+ * This file contains the following configurations:
+ *
+ * * Database settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
+ *
+ * @package WordPress
+ */
+
+// ** Database settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'wordpress' );
+
+/** Database username */
+define( 'DB_USER', 'admin' );
+
+/** Database password */
+define( 'DB_PASSWORD', 'shreyashalomjo' );
+
+/** Database hostname */
+define( 'DB_HOST', 'wprds.cnbdq9c3uik5.us-west-2.rds.amazonaws.com' );
+
+/** Database charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8mb4' );
+
+/** The database collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
+
+/**#@+
+ * Authentication unique keys and salts.
+ *
+ * Change these to different unique phrases! You can generate these using
+ * the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}.
+ *
+ * You can change these at any point in time to invalidate all existing cookies.
+ * This will force all users to have to log in again.
+ *
+ * @since 2.6.0
+ */
+define( 'AUTH_KEY',         '0|Y1NXb5VEV^kitB^DY]*I#$,gM9T-QTel0q>.z{|3((wdKMz(m0.6 i[du[SXko' );
+define( 'SECURE_AUTH_KEY',  'mTZvPFJKSNrR]5mgb`4wOH38#go^YVU-~|iFl-9JkEB2*^4f&L{m[VR~}f,r~p_6' );
+define( 'LOGGED_IN_KEY',    '*S*9!h=PiEl.pR%dXEF Bq7hy7Tvgu&h}Ob`c&b)9<5LDRV.4`K;|o@*9+4py /,' );
+define( 'NONCE_KEY',        '.$qv6&`F=x:7_o!?~j,1JuDi0fm_hvII#p >uhzTl7Dg]4k=(wrer6P2_)5;m9rO' );
+define( 'AUTH_SALT',        '!_YxJ/]rtG`I7ercRjwu58vc&4 &;Q4F|X!B%[R7L6-^<:G-sm@yK{UM8nhQW#k#' );
+define( 'SECURE_AUTH_SALT', ' lofc^EW&mIXuwE[>r&&`_5mxNxE+AP>:o`TX.46K3,hC,66ipL:f)x4Dz.`<Awb' );
+define( 'LOGGED_IN_SALT',   '!(#*m:$GDezFjzKSxU,XLU8f[#Er845vbJ]lx!j8sENVq/c1_D&n{2{yRzU4~!lp' );
+define( 'NONCE_SALT',       '^:lz.?]+c+&Gw7M5`ckq|*C`<.6@#tOP w8iY0j`,s6so$xQ$$um2W<U:$j,sg@]' );
+
+/**#@-*/
+
+/**
+ * WordPress database table prefix.
+ *
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix = 'wp_';
+
+/**
+ * For developers: WordPress debugging mode.
+ *
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the documentation.
+ *
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
+ */
+define( 'WP_DEBUG', false );
+
+/* Add any custom values between this line and the "stop editing" line. */
+
+
+
+/* That's all, stop editing! Happy publishing. */
+
+/** Absolute path to the WordPress directory. */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', __DIR__ . '/' );
+}
+
+/** Sets up WordPress vars and included files. */
+require_once ABSPATH . 'wp-settings.php';
+
+
+
+
+https://prnt.sc/9-phw0DUBdBZ
+https://prnt.sc/gDKC8zl4hPco
+https://prnt.sc/NDu6GwyD-TVa
+
+   
+
